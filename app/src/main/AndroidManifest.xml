@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fj.naufalprakoso.newpopcorntime">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+
+    <permission
+        android:name="com.fj.naufalprakoso.newpopcorntime.READ_DATABASE"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.fj.naufalprakoso.newpopcorntime.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MovieItemActivity"
+            android:parentActivityName=".activity.NavigationActivity" />
+        <activity
+            android:name=".activity.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:parentActivityName=".activity.NavigationActivity" />
+
+        <provider
+            android:name=".provider.FavoriteProvider"
+            android:authorities="com.fj.naufalprakoso.newpopcorntime"
+            android:exported="true"
+            android:readPermission="com.fj.naufalprakoso.newpopcorntime.READ_DATABASE"
+            android:writePermission="com.fj.naufalprakoso.newpopcorntime.WRITE_DATABASE" />
+
+        <receiver android:name=".stackWidget.ImageBannerWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/image_banner_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".stackWidget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service android:name=".service.SchedulerService"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".NotificationActivity" />
+
+        <receiver
+            android:name=".service.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

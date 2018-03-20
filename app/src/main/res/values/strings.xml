@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">New Popcorn Time</string>
+    <string name="masukkan_judul_film">enter a movie title</string>
+    <string name="judul">Title</string>
+    <string name="deskripsi">Overview</string>
+    <string name="terbit">Release</string>
+    <string name="title_activity_navigation">Now Playing</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Change Language</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="up_coming">Up Coming</string>
+    <string name="np_text_judul">np_text_judul</string>
+    <string name="np_text_deskripsi">np_text_deskripsi</string>
+    <string name="np_text_terbit">np_text_terbit</string>
+    <string name="selengkapnya">Read more</string>
+    <string name="popularity">Popularity</string>
+    <string name="search">Search</string>
+    <string name="the_flash"></string>
+    <string name="android_studio">Naufal Prakoso</string>
+    <string name="android_studio_android_com">naufalprakoso24@gmail.com</string>
+    <string name="favorite">Favorite</string>
+    <string name="appwidget_text">Favorite Movie</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_text">No data</string>
+    <string name="set_daily_reminder">Set Notification Daily Reminder</string>
+    <string name="set_date">set date</string>
+    <string name="set_time">set time</string>
+    <string name="btn_active_daily">Aktifkan</string>
+    <string name="btn_unactive_daily">Nonaktifkan</string>
+    <string name="set_notif_upcoming">Set Notifikasi UpComing Movie</string>
+    <string name="set_notification">Set Notification</string>
+</resources>
